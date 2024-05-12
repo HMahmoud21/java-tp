@@ -1,0 +1,85 @@
+package sample;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
+public class AjouterUtilisateurController {
+
+    @FXML
+    private TextField nomField;
+
+    @FXML
+    private TextField prenomField;
+
+    @FXML
+    private TextField usernameField;
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private PasswordField confirmPasswordField;
+
+    @FXML
+    private Button ajouterButton;
+
+    @FXML
+    private Button annulerButton;
+
+    @FXML
+    private Button deconnecterButton;
+
+    @FXML
+    private void initialize() {
+        // Vous pouvez ajouter des initialisations si nécessaire
+    }
+
+    @FXML
+    private void handleAjouter() {
+        if (champsSontRemplis() && motDePasseEgaux()) {
+            afficherMessage("Utilisateur ajouté avec succès!");
+            viderChamps();
+        } else {
+            afficherMessage("Veuillez remplir tous les champs et assurez-vous que les mots de passe correspondent.");
+        }
+    }
+
+    @FXML
+    private void handleAnnuler() {
+        viderChamps();
+    }
+
+    @FXML
+    private void handleDeconnecter() {
+        deconnecterButton.getScene().getWindow().hide();
+    }
+
+    private boolean champsSontRemplis() {
+        return !nomField.getText().isEmpty() &&
+               !prenomField.getText().isEmpty() &&
+               !usernameField.getText().isEmpty() &&
+               !passwordField.getText().isEmpty() &&
+               !confirmPasswordField.getText().isEmpty();
+    }
+
+    private boolean motDePasseEgaux() {
+        return passwordField.getText().equals(confirmPasswordField.getText());
+    }
+
+    private void viderChamps() {
+        nomField.clear();
+        prenomField.clear();
+        usernameField.clear();
+        passwordField.clear();
+        confirmPasswordField.clear();
+    }
+
+    private void afficherMessage(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.AddPersonController">
+   <children>
+      <Label layoutX="33.0" layoutY="14.0" prefHeight="17.0" prefWidth="311.0" text="Ajouter Personne " textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="cin" layoutX="38.0" layoutY="87.0" prefHeight="17.0" prefWidth="160.0" text="Numéro Carte Identité " />
+      <TextField fx:id="numcin" alignment="CENTER" layoutX="201.0" layoutY="83.0" prefHeight="25.0" prefWidth="242.0" promptText="saisie numéro Cin " />
+      <Label layoutX="38.0" layoutY="138.0" prefHeight="17.0" prefWidth="129.0" text="Nom" />
+      <Label fx:id="prenom" layoutX="38.0" layoutY="183.0" prefHeight="17.0" prefWidth="110.0" text="Prénom " />
+      <Label fx:id="civilite" layoutX="38.0" layoutY="242.0" prefHeight="17.0" prefWidth="110.0" text="Civilité " />
+      <TextField fx:id="snom" alignment="CENTER" layoutX="201.0" layoutY="134.0" prefHeight="25.0" prefWidth="242.0" promptText="saisir votre nom " />
+      <TextField fx:id="sprenoom" alignment="CENTER" layoutX="201.0" layoutY="179.0" prefHeight="25.0" prefWidth="242.0" promptText="saisir votre prenom" />
+      <RadioButton fx:id="cfemme" layoutX="201.0" layoutY="242.0" mnemonicParsing="false" text="femme" />
+      <RadioButton fx:id="cHomme" layoutX="356.0" layoutY="242.0" mnemonicParsing="false" text="Homme" />
+      <Button fx:id="ajout" layoutX="189.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Ajouter" onAction="#handleAjouter" />
+
+      <!-- <Button fx:id="ajout" layoutX="189.0" layoutY="326.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Ajouter" /> -->
+      <Button fx:id="anuul" layoutX="388.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Annuler" />
+   </children>
+</AnchorPane>
